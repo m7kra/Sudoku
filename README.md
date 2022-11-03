@@ -4,13 +4,16 @@ A Python Sudoku solver. It uses a simple constraint-based approach, which is abl
 
 ## Logic
 
-*Note: This section only applies to the constraint based approach, which in turn can only be applied in simple Sudoku's. Representing Sudokus in order to use techniques such as naked pairs & others isn't so easy :)*
+Representing a Sudoku grid in a computer program is a nightmare. Rows, columns, boxes and cells get in your way. After trying out a few different approaches, I came up with one that I think is quite elegant. The key idea is to abstract away from these elements and focus on two simple components:
 
-Simple as this might seem, a game of Sudoku only has two components and two simple rules. The components are cells that contain numbers ranging from 1 to 9 and numbers that must fit into one of nine cells (here referred as groups). The rules are equally trivial: one cell must contain one and only one number and a number only fits one cell in a group.
+- Cells that contain numbers ranging from 1 to 9.
+- Numbers that must fit into one of nine cells (here referred as groups). 
 
-Cells are straightforward, but the concept of group may be confusing. A row, a column and a small box are cell groups. You can, for instance, say you have a group with the number 1 and all the cells in the first row.
+The rules are equally trivial: one cell must contain one and only one number and a number only fits one cell in a group.
 
-This sets up the stage for the implementation part. The other complicated things of Sudoku are just noise that will be dealt with very easily. One last question remains: if it is so simple, why can a Sudoku puzzle be so hard to solve? The answer lies in cheer amount of information that has to be dealt with. As we will soon see, there are 81 cells and 243 groups, all of which must be kept coordinated. Only a computer can solve such a problem in a fast way.
+Cells are straightforward, but the concept of group may be confusing. A row, a column and a small box are cell groups. You can, for instance, say that you have a group with the number 1 and all the cells in the first row.
+
+This sets up the stage for the implementation part. The other complicated things of Sudoku are just noise that will be dealt with very easily. One last question remains: if it is so simple, why can a Sudoku puzzle be so hard to solve? The answer lies in the cheer amount of information that has to be dealt with. As we will soon see, there are 81 cells and 243 groups, all of which must be kept coordinated. Only a computer can solve such a problem in a reasonable amount of time.
 
 ## Structure
 
